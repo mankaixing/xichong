@@ -2,11 +2,11 @@
 
 import Link from 'next/link'
 import Image from 'next/image'
-import { Home, ShoppingCart, Users, MapPin, Car, Calendar, Info, Sun, Moon, Waves, Mountain } from 'lucide-react'
-import { Button } from '@/components/ui/button'
+import { Home, ShoppingCart, Users, MapPin, Calendar, Info, Sun, Moon, Waves, Mountain } from 'lucide-react'
 import { Card } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Tabs, TabsList, TabsTrigger } from '@/components/ui/tabs'
+import { Button } from '@/components/ui/button'
 
 export default function GuidePage() {
   return (
@@ -86,85 +86,129 @@ export default function GuidePage() {
             fill
             className="object-cover"
           />
-          <div className="relative z-10 text-white">
-            <h3 className="font-bold">景区门票</h3>
-            <p className="text-sm mt-1">含天文馆</p>
-            <Badge className="mt-2" variant="secondary">
-              ¥80起
-            </Badge>
+          <div className="relative z-10 bg-white/90 p-3 rounded-lg">
+            <h3 className="font-bold mb-2">景区购票</h3>
+            <p className="text-sm text-gray-500">线上购买更优惠</p>
           </div>
         </Card>
         <Card className="p-4 relative overflow-hidden">
           <Image
-            src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/4.jpg-7DfUnvN3wdfrFrdGhYK9uyCe354OLj.jpeg"
-            alt="观星活动"
+            src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/地图-nzgY3mGWqGKYqIuIDeeiyKpqO96ZFR.png"
+            alt="全景地图"
             fill
             className="object-cover"
           />
-          <div className="relative z-10 text-white">
-            <h3 className="font-bold">观星活动</h3>
-            <p className="text-sm mt-1">专业讲解</p>
-            <Badge className="mt-2" variant="secondary">
-              ¥120起
-            </Badge>
+          <div className="relative z-10 bg-white/90 p-3 rounded-lg">
+            <h3 className="font-bold mb-2">全景地图</h3>
+            <p className="text-sm text-gray-500">四大沙滩 八大村落</p>
           </div>
         </Card>
       </div>
 
-      {/* Featured Spots */}
+      {/* Transportation */}
       <div className="p-4">
-        <h2 className="text-lg font-bold mb-3">特色景点</h2>
-        <div className="space-y-4">
-          <Card className="flex items-center p-3">
-            <div className="flex-shrink-0 mr-4">
+        <Card className="p-4 bg-blue-50">
+          <div className="flex items-center justify-between mb-4">
+            <div className="flex items-center gap-2">
+              <h3 className="font-bold">交通指引</h3>
+              <Badge>实时路况</Badge>
+            </div>
+            <MapPin className="text-blue-500" />
+          </div>
+          <div className="grid grid-cols-2 gap-4">
+            <Button variant="outline" className="h-auto py-4 justify-start">
+              <div className="text-left">
+                <div className="font-medium">前往西涌</div>
+                <div className="text-sm text-gray-500">停车场 / 公交线路</div>
+              </div>
+            </Button>
+            <Button variant="outline" className="h-auto py-4 justify-start">
+              <div className="text-left">
+                <div className="font-medium">西涌内部</div>
+                <div className="text-sm text-gray-500">景区接驳车指引</div>
+              </div>
+            </Button>
+          </div>
+        </Card>
+      </div>
+
+      {/* Recommended Routes */}
+      <div className="p-4">
+        <div className="grid grid-cols-2 gap-4">
+          <div className="space-y-4">
+            <div className="flex items-center gap-2">
+              <h3 className="font-bold">推荐线路</h3>
+              <Badge variant="outline" className="text-xs">
+                <Mountain className="w-3 h-3 mr-1" />
+                景区精选
+              </Badge>
+            </div>
+            <Card className="relative h-32 overflow-hidden">
               <Image
-                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/天文台.JPG-UlAWV8CwLOwnzhVIbMashwzixk2dg7.jpeg"
+                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/线路.JPG-ujCSs9BHrCI6JnedEFG1vJ115CQvp6.jpeg"
+                alt="文化线路"
+                fill
+                className="object-cover"
+              />
+              <div className="absolute inset-0 bg-black/40 p-4 flex items-end">
+                <div className="text-white">
+                  <div className="font-medium">西涌文化线路</div>
+                  <div className="text-sm">旧址遗址、客家文化</div>
+                </div>
+              </div>
+            </Card>
+            <Card className="relative h-32 overflow-hidden">
+              <Image
+                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/3.jpg-NbLTxIjk70tub9GVMgIf947uG3gYgy.jpeg"
+                alt="休闲线路"
+                fill
+                className="object-cover"
+              />
+              <div className="absolute inset-0 bg-black/40 p-4 flex items-end">
+                <div className="text-white">
+                  <div className="font-medium">滨海休闲线路</div>
+                  <div className="text-sm">沙滩景区、窑鸡农家乐</div>
+                </div>
+              </div>
+            </Card>
+          </div>
+          <div className="space-y-4">
+            <div className="flex items-center gap-2">
+              <h3 className="font-bold">景点名片</h3>
+              <Badge variant="outline" className="text-xs">
+                <Waves className="w-3 h-3 mr-1" />
+                必游打卡
+              </Badge>
+            </div>
+            <Card className="relative h-32 overflow-hidden">
+              <Image
+                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/天文馆-FzBiVzmP34vgo1QEw5Nzf7aGXpCDmQ.png"
+                alt="天文馆"
+                fill
+                className="object-cover"
+              />
+              <div className="absolute inset-0 bg-black/40 p-4 flex items-end">
+                <div className="text-white">
+                  <div className="font-medium">西涌暗夜天文馆</div>
+                  <div className="text-sm">深圳首个天文主题馆</div>
+                </div>
+              </div>
+            </Card>
+            <Card className="relative h-32 overflow-hidden">
+              <Image
+                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/天文台.JPG-sE6iUAnfh9yCfFZLp9YgUZYUvUPNxF.jpeg"
                 alt="天文台"
-                width={80}
-                height={80}
-                className="rounded-lg object-cover"
+                fill
+                className="object-cover"
               />
-            </div>
-            <div>
-              <h3 className="font-bold">西涌天文台</h3>
-              <p className="text-sm text-gray-500">探索浩瀚宇宙</p>
-              <div className="flex items-center mt-1">
-                <Badge variant="secondary" className="mr-2">
-                  <Mountain className="w-3 h-3 mr-1" />
-                  必游
-                </Badge>
-                <Badge variant="secondary">
-                  <Waves className="w-3 h-3 mr-1" />
-                  海景
-                </Badge>
+              <div className="absolute inset-0 bg-black/40 p-4 flex items-end">
+                <div className="text-white">
+                  <div className="font-medium">四号沙滩</div>
+                  <div className="text-sm">深圳天文台</div>
+                </div>
               </div>
-            </div>
-          </Card>
-          <Card className="flex items-center p-3">
-            <div className="flex-shrink-0 mr-4">
-              <Image
-                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/音乐节.jpg-MPJuCWx2Pizrc0MbKLcBZeQts92kC6.jpeg"
-                alt="沙滩音乐节"
-                width={80}
-                height={80}
-                className="rounded-lg object-cover"
-              />
-            </div>
-            <div>
-              <h3 className="font-bold">沙滩音乐节</h3>
-              <p className="text-sm text-gray-500">星空下的音乐盛宴</p>
-              <div className="flex items-center mt-1">
-                <Badge variant="secondary" className="mr-2">
-                  <Sun className="w-3 h-3 mr-1" />
-                  热门
-                </Badge>
-                <Badge variant="secondary">
-                  <Moon className="w-3 h-3 mr-1" />
-                  夜场
-                </Badge>
-              </div>
-            </div>
-          </Card>
+            </Card>
+          </div>
         </div>
       </div>
 
@@ -192,4 +236,5 @@ export default function GuidePage() {
     </div>
   )
 }
+
 
